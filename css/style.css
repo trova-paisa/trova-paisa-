@@ -59,11 +59,7 @@ nav ul li a {
     margin-bottom: 20px;
     color: #333;
 }
-/* === Estilos para la galería === */
-.galeria {
-  display: grid;
-  ...
-}
+
 .galeria {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
