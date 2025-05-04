@@ -61,12 +61,15 @@ nav ul li a {
 }
 /* === Estilos para la galería === */
 .galeria {
+  display: grid;
+  ...
+}
+.galeria {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
     max-width: 1200px;
-    margin: 0 auto;
-    ...
+    margin: 0 auto;  
 }
 
 .galeria img {
