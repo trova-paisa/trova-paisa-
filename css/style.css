@@ -4,17 +4,20 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #fdfdfd;
 }
+
 header {
     background-color: #8B0000;
     color: #fff;
     padding: 1rem 0;
 }
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -22,38 +25,66 @@ nav {
     width: 90%;
     margin: auto;
 }
+
 nav ul {
     list-style: none;
     display: flex;
 }
+
 nav ul li {
     margin-left: 20px;
 }
+
 nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
 }
+
 .hero {
     background-color: #FFE4C4;
     padding: 4rem 2rem;
     text-align: center;
 }
+
+#galeria {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+#galeria h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
 .galeria {
-    padding: 2rem;
-}
-.galeria .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
+
 .galeria img {
     width: 100%;
-    border-radius: 8px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
-.nosotros, .contacto {
+
+.galeria img:hover {
+    transform: scale(1.03);
+}
+
+.nosotros,
+.contacto {
     padding: 2rem;
 }
+
 footer {
     text-align: center;
     padding: 1rem;
@@ -61,46 +92,15 @@ footer {
     color: #fff;
     margin-top: 2rem;
 }
+
 @media (max-width: 600px) {
     nav ul {
         flex-direction: column;
         align-items: flex-end;
     }
+
     .hero {
         padding: 2rem 1rem;
     }
-}
-#galeria {
-  padding: 40px 20px;
-  background-color: #f9f9f9;
-  text-align: center;
-}
 
-#galeria h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #333;
-}
 
-.galeria {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.galeria img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.galeria img:hover {
-  transform: scale(1.03);
-}
-#galeria {
-  margin-bottom: 60px;
-}
