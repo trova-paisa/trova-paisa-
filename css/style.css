@@ -80,7 +80,15 @@ nav ul li a {
     transform: scale(1.05);
     opacity: 0.9;
 }
+.galeria .item {
+  text-align: center;
+}
 
+.galeria .item p {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #555;
+}
 .nosotros,
 .contacto {
     padding: 2rem;
