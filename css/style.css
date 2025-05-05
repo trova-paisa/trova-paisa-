@@ -77,7 +77,8 @@ nav ul li a {
 }
 
 .galeria img:hover {
-    transform: scale(1.03);
+    transform: scale(1.05);
+    opacity: 0.9;
 }
 
 .nosotros,
