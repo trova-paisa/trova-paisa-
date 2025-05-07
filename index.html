@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.body.appendChild(lightboxContainer);
 
-  document.querySelectorAll('.galeria-lightbox a').forEach(link => {
+  document.querySelectorAll('.galeria a').forEach(link => {
     link.addEventListener('click', function (e) {
       e.preventDefault();
       lightboxImage.src = this.href;
