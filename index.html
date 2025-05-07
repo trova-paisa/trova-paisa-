@@ -119,5 +119,30 @@
     <footer>
         <p>&copy; 2025 Trova Paisa. Todos los derechos reservados.</p>
     </footer>
+  <script>
+  const sliderImages = document.querySelector('.slider-images');
+  const images = document.querySelectorAll('.slider-images img');
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
+
+  let counter = 0;
+
+  nextBtn.addEventListener('click', () => {
+    counter = (counter + 1) % images.length;
+    updateSlider();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    counter = (counter - 1 + images.length) % images.length;
+    updateSlider();
+  });
+
+  function updateSlider() {
+    const slideWidth = images[0].clientWidth;
+    `sliderImages.style.transform = translateX(-${counter * slideWidth}px)`;
+  }
+
+  window.addEventListener('resize', updateSlider);
+</script>
 </body>
 </html>
