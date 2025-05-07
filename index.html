@@ -114,46 +114,42 @@
     <footer>
         <p>&copy; 2025 Trova Paisa. Todos los derechos reservados.</p>
     </footer>
-<!-- Slider Script -->
 <script>
-  const sliderImages = document.querySelector('.slider-images');
-  const images = document.querySelectorAll('.slider-images img');
-  const prevBtn = document.querySelector('.prev');
-  const nextBtn = document.querySelector('.next');
+// Activar Lightbox para la galería
+document.addEventListener('DOMContentLoaded', function () {
+  const lightboxContainer = document.createElement('div');
+  lightboxContainer.id = 'lightbox';
+  lightboxContainer.style.position = 'fixed';
+  lightboxContainer.style.top = 0;
+  lightboxContainer.style.left = 0;
+  lightboxContainer.style.width = '100%';
+  lightboxContainer.style.height = '100%';
+  lightboxContainer.style.background = 'rgba(0, 0, 0, 0.8)';
+  lightboxContainer.style.display = 'flex';
+  lightboxContainer.style.alignItems = 'center';
+  lightboxContainer.style.justifyContent = 'center';
+  lightboxContainer.style.zIndex = '9999';
+  lightboxContainer.style.display = 'none';
 
-  let counter = 0;
+  const lightboxImage = document.createElement('img');
+  lightboxImage.style.maxWidth = '90%';
+  lightboxImage.style.maxHeight = '90%';
+  lightboxContainer.appendChild(lightboxImage);
 
-  nextBtn.addEventListener('click', () => {
-    counter = (counter + 1) % images.length;
-    updateSlider();
+  document.body.appendChild(lightboxContainer);
+
+  document.querySelectorAll('.galeria-lightbox a').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      lightboxImage.src = this.href;
+      lightboxContainer.style.display = 'flex';
+    });
   });
 
-  prevBtn.addEventListener('click', () => {
-    counter = (counter - 1 + images.length) % images.length;
-    updateSlider();
+  lightboxContainer.addEventListener('click', function () {
+    lightboxContainer.style.display = 'none';
   });
-
-  function updateSlider() {
-    const slideWidth = images[0].clientWidth;
-    sliderImages.style.transform = `translateX(-${counter * slideWidth}px)`;
-  }
-
-  window.addEventListener('resize', updateSlider);
-</script>
-
-<!-- Lightbox2 CSS & JS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
-
-<!-- Configuración de Lightbox -->
-<script>
-  lightbox.option({
-    'resizeDuration': 200,
-    'wrapAround': true,
-    'fadeDuration': 300,
-    'imageFadeDuration': 300,
-    'disableScrolling': true
-  });
+});
 </script>
 </body>
 </html>
