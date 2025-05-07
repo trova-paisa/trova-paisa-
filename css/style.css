@@ -272,10 +272,10 @@ footer {
 .slider {
   position: relative;
   overflow: hidden;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .slider-images {
@@ -284,8 +284,8 @@ footer {
 }
 
 .slider-images img {
-  min-width: 100%;
-  height: auto;
+  width: 100%;
+  flex-shrink: 0;
   object-fit: cover;
   border-radius: 12px;
 }
@@ -294,7 +294,7 @@ footer {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
   font-size: 2rem;
@@ -302,11 +302,6 @@ footer {
   cursor: pointer;
   z-index: 10;
   border-radius: 50%;
-  transition: background-color 0.3s ease;
-}
-
-.slider button:hover {
-  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .slider .prev {
@@ -317,10 +312,4 @@ footer {
   right: 10px;
 }
 
-@media (max-width: 768px) {
-  .slider button {
-    font-size: 1.5rem;
-    padding: 0.4rem 0.8rem;
-  }
-}
 
